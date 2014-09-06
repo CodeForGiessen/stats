@@ -47,7 +47,15 @@
             $(function () {
                 $('.highchart-container').highcharts({
                     chart: {
-                        type: 'area'
+                        type: 'bar'
+                    },
+                    plotOptions: {
+                        series: {
+                            stacking: 'normal'
+                        }
+                    },
+                    legend: {
+                        reversed: true
                     },
                     title: {
                         text: 'Zusammensetzung der Meetups'
@@ -71,17 +79,6 @@
                     },
                     tooltip: {
                         shared: true
-                    },
-                    plotOptions: {
-                        area: {
-                            stacking: 'normal',
-                            lineColor: '#666666',
-                            lineWidth: 1,
-                            marker: {
-                                lineWidth: 1,
-                                lineColor: '#666666'
-                            }
-                        }
                     },
                     series: [{
                         name: 'Leads',
