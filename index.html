@@ -45,7 +45,8 @@
         <script src="js/vendor/highcharts.js"></script>
         <script type="text/javascript">
             $(function () {
-                $('.highchart-container').highcharts({
+                // 2014
+                $('.highchart-container-2014').highcharts({
                     chart: {
                         type: 'bar'
                     },
@@ -92,6 +93,55 @@
                     }],
                     colors: ['#6D4869', '#A35C58', '#D47345']
                 });
+
+                // 2015
+                $('.highchart-container-2015').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    plotOptions: {
+                        series: {
+                            stacking: 'normal'
+                        }
+                    },
+                    legend: {
+                        reversed: true
+                    },
+                    title: {
+                        text: 'Zusammensetzung der Meetups (2015)'
+                    },
+                    xAxis: {
+                        categories: ['5.1.'],
+                        tickmarkPlacement: 'on',
+                        title: {
+                            text: 'Meetups'
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Teilnehmende'
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value;
+                            }
+                        }
+                    },
+                    tooltip: {
+                        shared: true
+                    },
+                    series: [{
+                        name: 'Leads',
+                        data: [3]
+                    }, {
+                        name: 'Fellows',
+                        data: [3]
+                    }, {
+                        name: 'Interessierte',
+                        data: [3]
+                    }],
+                    colors: ['#6D4869', '#A35C58', '#D47345']
+                });
 });
 
 </script>
@@ -100,8 +150,16 @@
     <div class="container">
         <h1 class="h1">Teilnehmer*innen der OK Lab Gießen Meetups</h1>
 
+        <h2 class="h2">2014</h2>
+
         <div class="well">
-            <div class="highchart-container">
+            <div class="highchart-container-2014">
+            </div>
+        </div>
+
+        <h2 class="h2">2015</h2>
+        <div class="well">
+            <div class="highchart-container-2015">
             </div>
         </div>
 
